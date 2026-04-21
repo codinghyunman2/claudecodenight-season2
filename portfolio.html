@@ -120,6 +120,10 @@
     #s4 .dc-desc  { font-size: clamp(.75rem,1.15vw,1rem); line-height: 1.55; }
     #s4 .dc       { padding: clamp(.65rem,1.4vw,1.2rem); gap: .85rem; }
     #s4 .stacks   { margin-top: .45em; }
+    #s2 .two-col  { align-items: stretch; }
+    #s2 .stat-n   { font-size: clamp(4rem,9vw,7.5rem); }
+    #s2 .stat-l   { font-size: var(--t-body); margin-top:.3em; }
+    #s2 .rev-s    { display:flex; align-items:center; justify-content:center; }
 </style>
 <style>
 /* === THEME === */
@@ -510,7 +514,7 @@ html, body {
                     </ul>
                 </div>
                 <div class="rev-s">
-                    <div style="display:flex;gap:clamp(.8rem,2.5vw,2rem);margin-top:clamp(.45rem,1.3vh,.85rem);">
+                    <div style="display:flex;gap:clamp(2rem,5vw,4.5rem);align-items:flex-end;">
                         <div><div class="stat-n">13</div><div class="stat-l">총 자동화</div></div>
                         <div><div class="stat-n" style="color:var(--cyan);">9</div><div class="stat-l">매일 운영 중</div></div>
                     </div>
@@ -573,7 +577,7 @@ html, body {
                 <span class="tag tag-g">6개월 실적</span>
                 <span class="tag">월간 절감 시간</span>
             </div>
-            <h2 class="t-h2 rev">매달 <span class="a">272시간</span>을<br>확보했다</h2>
+            <h2 class="t-h2 rev">매달 <span class="a">272시간</span>을<br>확보했습니다.</h2>
             <p class="rev" style="font-size:var(--t-body);color:var(--text2);margin-top:clamp(.2rem,.5vh,.4rem);">13개 자동화 · 월 기준 합산 · 근무일 8시간 환산</p>
 
             <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.5rem,1.4vw,1.1rem);margin-top:clamp(.55rem,1.6vh,1.1rem);" class="rev-s">

@@ -271,6 +271,7 @@ html, body {
     transform: scale(1.5);
     box-shadow: 0 0 5px var(--accent-glow);
 }
+.mob-nav-btn { display: none; }
 
 /* === SLIDE NUMBER === */
 .snum {
@@ -453,6 +454,29 @@ html, body {
 
     /* 한국어 줄바꿈 */
     * { word-break: keep-all; overflow-wrap: break-word; }
+
+    /* 모바일 전용 prev/next 버튼 */
+    .mob-nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        background: rgba(0,0,0,.15);
+        border: none;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 1.8rem;
+        line-height: 1;
+        cursor: pointer;
+        z-index: 200;
+        -webkit-tap-highlight-color: transparent;
+    }
+    #btn-prev { left: 0.4rem; }
+    #btn-next { right: 0.4rem; }
 }
 </style>
 </head>
@@ -468,6 +492,10 @@ html, body {
 
     <!-- Nav dots -->
     <nav class="nav-dots" id="nd" aria-label="슬라이드 네비게이션"></nav>
+
+    <!-- Mobile prev/next (hidden on desktop via CSS) -->
+    <button class="mob-nav-btn" id="btn-prev" aria-label="이전 슬라이드">&#8249;</button>
+    <button class="mob-nav-btn" id="btn-next" aria-label="다음 슬라이드">&#8250;</button>
 
     <!-- =====================
          SLIDE 01 — 표지
@@ -927,6 +955,7 @@ class Deck {
         this.nd      = document.getElementById('nd');
         this.dots    = [];
         this.touchY  = 0;
+        this.touchX  = 0;
         this.init();
     }
 
@@ -969,10 +998,18 @@ class Deck {
     }
 
     touch() {
-        document.addEventListener('touchstart', e => { this.touchY = e.touches[0].clientY; }, { passive: true });
-        document.addEventListener('touchend',   e => {
-            const d = this.touchY - e.changedTouches[0].clientY;
-            if (Math.abs(d) > 45) this.go(d > 0 ? this.current + 1 : this.current - 1);
+        document.addEventListener('touchstart', e => {
+            this.touchY = e.touches[0].clientY;
+            this.touchX = e.touches[0].clientX;
+        }, { passive: true });
+        document.addEventListener('touchend', e => {
+            const dy = this.touchY - e.changedTouches[0].clientY;
+            const dx = this.touchX - e.changedTouches[0].clientX;
+            if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 30) {
+                this.go(dx > 0 ? this.current + 1 : this.current - 1);
+            } else if (Math.abs(dy) > 30) {
+                this.go(dy > 0 ? this.current + 1 : this.current - 1);
+            }
         }, { passive: true });
     }
 
@@ -994,6 +1031,11 @@ class Deck {
 }
 
 window.__deck = new Deck();
+
+const btnPrev = document.getElementById('btn-prev');
+const btnNext = document.getElementById('btn-next');
+if (btnPrev) btnPrev.addEventListener('click', () => window.__deck.go(window.__deck.current - 1));
+if (btnNext) btnNext.addEventListener('click', () => window.__deck.go(window.__deck.current + 1));
 
 const btnRestart = document.getElementById('btn-restart');
 if (btnRestart) {

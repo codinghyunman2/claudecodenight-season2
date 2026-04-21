@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="no-referrer">
 <title>내 업무를 에이전트에게 넘겨본 이야기 — 클코나잇 시즌 2</title>
 <style>
 /* cyrillic-ext */
@@ -906,7 +909,7 @@ html, body {
                     <span style="font-family:var(--mono);font-size:var(--t-sm);color:var(--accent-light);">클코나잇 시즌 2 · 2026</span>
                 </div>
             </div>
-            <button class="rev" id="btn-restart" onclick="window.__deck.go(0)" style="margin-top:clamp(1.2rem,3.5vh,2.2rem);padding:.55em 1.6em;background:var(--accent);color:#fff;border:none;border-radius:6px;font-family:var(--mono);font-size:var(--t-sm);font-weight:700;letter-spacing:.06em;cursor:pointer;transition:opacity .2s;" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">↑ 처음으로</button>
+            <button class="rev" id="btn-restart" style="margin-top:clamp(1.2rem,3.5vh,2.2rem);padding:.55em 1.6em;background:var(--accent);color:#fff;border:none;border-radius:6px;font-family:var(--mono);font-size:var(--t-sm);font-weight:700;letter-spacing:.06em;cursor:pointer;transition:opacity .2s;">↑ 처음으로</button>
         </div>
         <div class="snum">12 / 12</div>
     </section>
@@ -991,6 +994,13 @@ class Deck {
 }
 
 window.__deck = new Deck();
+
+const btnRestart = document.getElementById('btn-restart');
+if (btnRestart) {
+    btnRestart.addEventListener('click', () => window.__deck.go(0));
+    btnRestart.addEventListener('mouseover', () => { btnRestart.style.opacity = '.8'; });
+    btnRestart.addEventListener('mouseout',  () => { btnRestart.style.opacity = '1';  });
+}
 </script>
 </body>
 </html>

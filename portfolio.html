@@ -114,6 +114,12 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+
+    /* S4: enlarged for single-col readability */
+    #s4 .dc-title { font-size: clamp(.85rem,1.45vw,1.2rem); }
+    #s4 .dc-desc  { font-size: clamp(.75rem,1.15vw,1rem); line-height: 1.55; }
+    #s4 .dc       { padding: clamp(.65rem,1.4vw,1.2rem); gap: .85rem; }
+    #s4 .stacks   { margin-top: .45em; }
 </style>
 <style>
 /* === THEME === */
@@ -504,10 +510,6 @@ html, body {
                     </ul>
                 </div>
                 <div class="rev-s">
-                    <div class="skel" style="min-height:clamp(90px,18vh,190px);">
-                        <div class="skel-icon">👤</div>
-                        <span>프로필 사진</span>
-                    </div>
                     <div style="display:flex;gap:clamp(.8rem,2.5vw,2rem);margin-top:clamp(.45rem,1.3vh,.85rem);">
                         <div><div class="stat-n">13</div><div class="stat-l">총 자동화</div></div>
                         <div><div class="stat-n" style="color:var(--cyan);">9</div><div class="stat-l">매일 운영 중</div></div>
@@ -567,15 +569,15 @@ html, body {
          ===================== -->
     <section class="slide grad1 gb" id="s4">
         <div class="slide-content">
-            <div class="two-col">
+            <div style="max-width:660px;">
                 <div>
-                    <div style="display:flex;gap:.5em;margin-bottom:clamp(.3rem,.8vh,.6rem);" class="rev">
+                    <div style="display:flex;gap:.5em;margin-bottom:clamp(.5rem,1.5vh,1rem);" class="rev">
                         <span class="tag tag-c">CS</span>
                         <span class="tag">2개 자동화</span>
                     </div>
                     <h2 class="t-h2 rev">앱스토어 리뷰<br><span class="c">전체 자동화</span></h2>
-                    <div class="div-line rev"></div>
-                    <div style="display:flex;flex-direction:column;gap:clamp(.35rem,.9vh,.7rem);">
+                    <div class="div-line rev" style="margin-top:clamp(.4rem,1.2vh,.85rem);margin-bottom:clamp(.4rem,1.2vh,.85rem);"></div>
+                    <div style="display:flex;flex-direction:column;gap:clamp(.7rem,2vh,1.4rem);">
                         <div class="dc rev">
                             <div style="flex:1;">
                                 <div class="dc-title">리뷰 답변 자동 작성</div>
@@ -592,12 +594,6 @@ html, body {
                             </div>
                             <span class="save">매일</span>
                         </div>
-                    </div>
-                </div>
-                <div class="rev-s">
-                    <div class="skel" style="min-height:clamp(110px,22vh,210px);">
-                        <div class="skel-icon">💬</div>
-                        <span>슬랙 리뷰 알림<br>메시지 예시 스크린샷</span>
                     </div>
                 </div>
             </div>
@@ -676,12 +672,6 @@ html, body {
                     <div class="dc-title" style="margin-bottom:.3em;">📡 트렌드 대시보드</div>
                     <div class="dc-desc">Meta Ad Library 광고 API<br>YouTube 바이럴 Shorts 집계<br>URL 하나로 팀 공유</div>
                     <div class="stacks"><span class="tag">Claude Code</span><span class="tag">Next.js</span><span class="tag tag-c">Vercel</span></div>
-                </div>
-            </div>
-            <div class="rev" style="margin-top:clamp(.4rem,1.1vh,.8rem);">
-                <div class="skel" style="min-height:clamp(60px,10vh,115px);">
-                    <div class="skel-icon">🖥️</div>
-                    <span>Rocket Brief 대시보드 스크린샷</span>
                 </div>
             </div>
         </div>

@@ -1931,7 +1931,7 @@
 
         setupKeyboardNav() {
             document.addEventListener('keydown', (e) => {
-                if (e.target.getAttribute('contenteditable') === 'true') return;
+                if (e.target.isContentEditable) return;
                 if (e.metaKey || e.ctrlKey) return;
                 const key = e.key;
                 if (key === 'ArrowDown' || key === 'ArrowRight' || key === 'PageDown' || key === ' ') {
@@ -2048,7 +2048,7 @@
         bindKeyboard() {
             document.addEventListener('keydown', (e) => {
                 if ((e.key === 'e' || e.key === 'E') &&
-                    e.target.getAttribute('contenteditable') !== 'true' &&
+                    !e.target.isContentEditable &&
                     !e.metaKey && !e.ctrlKey) {
                     this.toggle();
                 }

@@ -28,9 +28,9 @@
             --ink-5: #a3a3a3;
             --line: #e5e5e5;
             --line-soft: #f0f0f0;
-            --accent: #0066ff;
-            --accent-2: #003eb8;
-            --accent-soft: #ebf3ff;
+            --accent: #D97757;
+            --accent-2: #A84E32;
+            --accent-soft: #FBEEE6;
             --highlight: #fff7d6;
 
             /* Typography */
@@ -1158,7 +1158,7 @@
             <div class="stack">
                 <span class="tag reveal" data-editable>Claude Code Night · Season 2</span>
                 <h1 class="reveal" data-editable>게임업계 제너럴리스트의 AX 도전기.</h1>
-                <p class="subtitle reveal" data-editable>3개월간 AI 도구 24개를 만들면서 알게 된,<br>비개발자의 자동화 꿀팁들</p>
+                <p class="subtitle reveal" data-editable>3개월간 AI 도구 26개를 만들면서 알게 된,<br>비개발자의 자동화 꿀팁들</p>
             </div>
 
             <div class="title-meta-row reveal">
@@ -1203,7 +1203,7 @@
 
                     <div class="stat-row reveal">
                         <div class="stat">
-                            <span class="stat-num" data-editable>24</span>
+                            <span class="stat-num" data-editable>26</span>
                             <span class="stat-label" data-editable>AI 도구 제작</span>
                         </div>
                         <div class="stat">
@@ -1328,11 +1328,11 @@
 
         <div class="slide-content">
             <span class="chapter-num reveal" data-editable>Chapter 02</span>
-            <h2 class="chapter-title reveal" data-editable>24개 도구,<br>어떤 걸 만들었나.</h2>
+            <h2 class="chapter-title reveal" data-editable>26개 도구,<br>어떤 걸 만들었나.</h2>
             <p class="chapter-subtitle reveal" data-editable>마케팅 / 사업 / CS / 피플 — 직무별 자동화 아이디어와 실제 결과물.</p>
         </div>
 
-        <div class="footer-mark"><span data-editable>Ch 02 · 24 Tools</span></div>
+        <div class="footer-mark"><span data-editable>Ch 02 · 26 Tools</span></div>
     </section>
 
     <!-- =================================================================
@@ -1349,7 +1349,7 @@
 
         <div class="slide-content">
             <div class="slide-header">
-                <span class="tag reveal" data-editable>Breakdown · Total 24</span>
+                <span class="tag reveal" data-editable>Breakdown · Total 26</span>
                 <h2 class="reveal" data-editable>직무에 따라 자동화할 일은<br>무궁무진합니다.</h2>
             </div>
 
@@ -1371,15 +1371,16 @@
                 </div>
                 <div class="cat-card">
                     <div class="cat-head">
-                        <span class="cat-num" data-editable>11</span>
+                        <span class="cat-num" data-editable>13</span>
                         <span class="cat-label" data-editable>Business</span>
                     </div>
                     <ul>
+                        <li data-editable>주간 매출 자동화 — Sparta 일별 매출 → Notion 회의록</li>
+                        <li data-editable>스토어 리뷰 분석 — 주간 리뷰 → 운영팀 HTML 보고서</li>
                         <li data-editable>hackathon-setup — PRD/CLAUDE.md 자동 세팅</li>
                         <li data-editable>제품 캘린더 — 출시 D-Day 슬랙 멘션</li>
                         <li data-editable>피처링 요청서 자동 작성 (3h → 30m)</li>
-                        <li data-editable>meeting-prep-global — 영문 미팅 번역</li>
-                        <li data-editable>business-email — 비즈니스 영문 작성</li>
+                        <li data-editable>meeting-prep-global · business-email — 영문 미팅·메일</li>
                         <li data-editable>md-maker · pdf-maker · html-to-pdf</li>
                         <li data-editable>image-optimizer · git-local · git-commit-push</li>
                     </ul>
@@ -1404,7 +1405,7 @@
             </p>
         </div>
 
-        <div class="footer-mark"><span data-editable>Ch 02 · 24 Tools</span></div>
+        <div class="footer-mark"><span data-editable>Ch 02 · 26 Tools</span></div>
     </section>
 
     <!-- =================================================================
@@ -1690,28 +1691,29 @@
                     <span class="tag reveal" data-editable>Ready-to-use Prompt</span>
                     <h2 class="reveal" data-editable>이 프롬프트 하나면<br>오늘 본전은 뽑습니다.</h2>
                     <p class="body-text reveal" data-editable>
-                        Vercel 배포 전에 무조건 이 프롬프트를 돌립니다. <br> <b>우선순위 중 이상은 반드시 반영.</b> <br> 콘솔에 이슈 0, 최소한의 OAuth(공유 비번 + 미들웨어 쿠키) — <br> 이 두 가지가 비개발자 보안의 최소 기준.
+                        배포 전에 무조건 이 프롬프트를 돌립니다. <br> <b>우선순위 중 이상은 반드시 반영.</b> <br> 콘솔에 이슈 0, 최소한의 OAuth(공유 비번 + 미들웨어 쿠키) — <br> 이 두 가지가 비개발자 보안의 최소 기준.
                     </p>
-                    <span class="impact-pill reveal" data-editable>14개 항목 일괄 진단</span>
+                    <span class="impact-pill reveal" data-editable>15개 항목 일괄 진단</span>
                 </div>
 
-                <pre class="code reveal"><span class="comment"># 아래 코드를 Vercel 배포 전 보안 리뷰해줘.</span>
+                <pre class="code reveal"><span class="comment"># 아래 코드를 배포 전 보안 리뷰해줘.</span>
 [코드 붙여넣기]
 
-<span class="key">스택</span>: Next.js App Router + Vercel + [DB/Auth]
+<span class="key">스택</span>: [프레임워크] + [배포 환경] + [DB/Auth 스택]
 
-<span class="comment"># 14개 항목을 현재 코드 기준으로 진단</span>
-<span class="num">01.</span> CORS         <span class="num">08.</span> Rate Limit
-<span class="num">02.</span> CSRF         <span class="num">09.</span> 쿠키 · 세션
-<span class="num">03.</span> XSS + CSP    <span class="num">10.</span> Secret 관리
-<span class="num">04.</span> SSRF         <span class="num">11.</span> HTTPS · 보안헤더
-<span class="num">05.</span> AuthN/AuthZ  <span class="num">12.</span> Audit Log
-<span class="num">06.</span> 최소권한     <span class="num">13.</span> 에러 노출
-<span class="num">07.</span> Input + SQLi <span class="num">14.</span> 의존성 취약점
+<span class="comment"># 15개 항목을 현재 코드 기준으로 진단</span>
+<span class="num">01.</span> CORS           <span class="num">09.</span> Rate Limit
+<span class="num">02.</span> CSRF           <span class="num">10.</span> 쿠키 · 세션
+<span class="num">03.</span> XSS + CSP      <span class="num">11.</span> Secret · Rotation
+<span class="num">04.</span> SSRF           <span class="num">12.</span> HTTPS · 보안헤더
+<span class="num">05.</span> AuthN/AuthZ    <span class="num">13.</span> Audit Log
+<span class="num">06.</span> RBAC · 테넌트  <span class="num">14.</span> 에러 노출
+<span class="num">07.</span> 최소권한       <span class="num">15.</span> 의존성 취약점
+<span class="num">08.</span> Input + SQLi
 
 <span class="comment"># 출력 형식</span>
 | 항목 | 상태 | 위험도 | 수정 방향 |
-<span class="key">상태</span>: <span class="str">✅</span> 구현 / <span class="str">⚠️</span> 부분 / <span class="str">❌</span> 없음
+<span class="key">상태</span>: <span class="str">✅</span> 구현 / <span class="str">⚠️</span> 부분 / <span class="str">❌</span> 없음 / <span class="str">➖</span> 해당없음
 <span class="key">위험도</span>: High / Med / Low</pre>
             </div>
         </div>

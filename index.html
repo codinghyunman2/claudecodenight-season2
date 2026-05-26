@@ -1995,13 +1995,21 @@
         }
     }
 
+    document.addEventListener('DOMContentLoaded', () => {
+        new SlidePresentation();
+        const first = document.querySelector('.slide');
+        if (first) first.classList.add('visible');
+    });
+    </script>
+
+    <script data-editor-script>
     /* ============================================================
        INLINE EDITOR
        ============================================================ */
     class InlineEditor {
         constructor() {
             this.isActive = false;
-            this.STORAGE_KEY = 'cclaude-night-slides-v4';
+            this.STORAGE_KEY = 'cclaude-night-slides-final-2026-05-26';
             this.editables = Array.from(document.querySelectorAll('[data-editable]'));
             this.originals = this.editables.map((el) => el.innerHTML);
 
@@ -2124,6 +2132,10 @@
             clone.querySelectorAll('[contenteditable]').forEach((el) => {
                 el.removeAttribute('contenteditable');
             });
+            clone.querySelectorAll('[data-editable]').forEach((el) => {
+                el.removeAttribute('data-editable');
+            });
+            clone.querySelectorAll('script[data-editor-script]').forEach((el) => el.remove());
             const body = clone.querySelector('body');
             if (body) body.classList.remove('edit-mode');
 
@@ -2155,10 +2167,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        new SlidePresentation();
         window.__editor = new InlineEditor();
-        const first = document.querySelector('.slide');
-        if (first) first.classList.add('visible');
     });
     </script>
 </body>

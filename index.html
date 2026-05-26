@@ -1695,7 +1695,7 @@
                     <span class="impact-pill reveal" data-editable>14개 항목 일괄 진단</span>
                 </div>
 
-                <pre class="code reveal" data-editable><span class="comment"># 아래 코드를 Vercel 배포 전 보안 리뷰해줘.</span>
+                <pre class="code reveal"><span class="comment"># 아래 코드를 Vercel 배포 전 보안 리뷰해줘.</span>
 [코드 붙여넣기]
 
 <span class="key">스택</span>: Next.js App Router + Vercel + [DB/Auth]
@@ -2009,7 +2009,7 @@
     class InlineEditor {
         constructor() {
             this.isActive = false;
-            this.STORAGE_KEY = 'cclaude-night-slides-final-2026-05-26';
+            this.STORAGE_KEY = 'cclaude-night-slides-final-2026-05-26-safe';
             this.editables = Array.from(document.querySelectorAll('[data-editable]'));
             this.originals = this.editables.map((el) => el.innerHTML);
 
@@ -2070,7 +2070,7 @@
                 toggleBtn.textContent = '완료';
                 controls.classList.add('show');
                 this.editables.forEach((el) => {
-                    el.setAttribute('contenteditable', 'true');
+                    el.setAttribute('contenteditable', 'plaintext-only');
                     el.addEventListener('input', this._onInput);
                 });
                 this.flashStatus('편집 모드 ON · 텍스트를 클릭하여 수정');
@@ -2092,7 +2092,7 @@
         };
 
         saveToStorage() {
-            const data = this.editables.map((el) => el.innerHTML);
+            const data = this.editables.map((el) => el.textContent);
             try {
                 localStorage.setItem(this.STORAGE_KEY, JSON.stringify(data));
             } catch (err) {
@@ -2107,7 +2107,7 @@
                 const data = JSON.parse(raw);
                 if (!Array.isArray(data) || data.length !== this.editables.length) return;
                 this.editables.forEach((el, i) => {
-                    if (typeof data[i] === 'string') el.innerHTML = data[i];
+                    if (typeof data[i] === 'string') el.textContent = data[i];
                 });
             } catch (err) {
                 console.warn('localStorage 복원 실패:', err);

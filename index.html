@@ -455,24 +455,6 @@
             line-height: 1.55;
             margin-top: clamp(0.4rem, 1vw, 0.8rem);
         }
-        .chapter-meta {
-            font-family: var(--font-mono);
-            font-size: var(--label);
-            color: var(--ink-4);
-            display: flex;
-            align-items: center;
-            gap: 1em;
-            margin-top: clamp(1rem, 2vw, 1.6rem);
-            padding-top: clamp(1rem, 2vw, 1.6rem);
-            border-top: 1px solid var(--line);
-            width: fit-content;
-            min-width: 260px;
-        }
-        .chapter-meta span:not(:last-child)::after {
-            content: '·';
-            margin-left: 1em;
-            color: var(--ink-5);
-        }
 
         /* =============================================================
            STANDARD CONTENT SLIDE HEADER
@@ -580,6 +562,8 @@
         }
         [data-title="3단 세팅"] .pillar-card:hover { border-color: var(--line); transform: none; }
         [data-title="게임업계 맥락"] .pillar-card:hover { border-color: var(--line); transform: none; }
+        [data-title="팀 AX 가이드"] .pillar-card:hover { border-color: var(--line); transform: none; }
+        [data-title="ROI 큐레이션"] .pillar-card:hover { border-color: var(--line); transform: none; }
         .cat-head {
             display: flex;
             align-items: baseline;
@@ -1147,11 +1131,6 @@
          SLIDE 01 — TITLE
          ================================================================= -->
     <section class="slide title-slide" data-title="타이틀">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>01</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-        </span>
 
         <span class="bg-watermark" aria-hidden="true">AX</span>
 
@@ -1183,13 +1162,6 @@
          SLIDE 02 — 자기소개
          ================================================================= -->
     <section class="slide" data-title="자기소개">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>02</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Intro</span>
-        </span>
 
         <div class="slide-content">
             <div class="profile-layout">
@@ -1227,13 +1199,6 @@
          SLIDE 03 — 게임업계 맥락 (Why · Game Industry Pressure)
          ================================================================= -->
     <section class="slide" data-title="게임업계 맥락">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>03</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Context</span>
-        </span>
 
         <div class="slide-content">
             <div class="slide-header">
@@ -1286,13 +1251,6 @@
          SLIDE 04 — THESIS (한 줄 메시지)
          ================================================================= -->
     <section class="slide quote-slide" data-title="한 줄 메시지">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>04</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Thesis</span>
-        </span>
 
         <div class="slide-content">
             <span class="tag reveal" data-editable>오늘 발표의 한 줄</span>
@@ -1310,11 +1268,6 @@
          SLIDE 04 — CHAPTER 01
          ================================================================= -->
     <section class="slide chapter-slide" data-title="챕터 1">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>05</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-        </span>
 
         <div class="slide-content">
             <span class="chapter-num reveal" data-editable>Chapter 01</span>
@@ -1329,13 +1282,6 @@
          SLIDE 05 — JOURNEY (4 steps)
          ================================================================= -->
     <section class="slide" data-title="여정">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>06</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Journey</span>
-        </span>
 
         <div class="slide-content">
             <div class="slide-header">
@@ -1380,11 +1326,6 @@
          SLIDE 06 — CHAPTER 02
          ================================================================= -->
     <section class="slide chapter-slide" data-title="챕터 2">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>07</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-        </span>
 
         <div class="slide-content">
             <span class="chapter-num reveal" data-editable>Chapter 02</span>
@@ -1399,13 +1340,6 @@
          SLIDE 07 — CATEGORY BREAKDOWN
          ================================================================= -->
     <section class="slide" data-title="카테고리">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>08</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Categories</span>
-        </span>
 
         <div class="slide-content">
             <div class="slide-header">
@@ -1472,13 +1406,6 @@
          SLIDE 09 — ROCKET BRIEF CASE
          ================================================================= -->
     <section class="slide" data-title="Rocket Brief">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>09</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Case 01</span>
-        </span>
 
         <div class="slide-content">
             <div class="case-layout reverse">
@@ -1510,13 +1437,6 @@
          SLIDE 10 — SLACK CASE
          ================================================================= -->
     <section class="slide" data-title="슬랙 자동화">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>10</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Case 02</span>
-        </span>
 
         <div class="slide-content">
             <div class="slide-header">
@@ -1551,13 +1471,6 @@
          SLIDE 11 — ROI 큐레이션 (Top 3 ROI · 예상 외 실패 3)
          ================================================================= -->
     <section class="slide" data-title="ROI 큐레이션">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>11</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Curation</span>
-        </span>
 
         <div class="slide-content">
             <div class="slide-header">
@@ -1600,11 +1513,6 @@
          SLIDE 10 — CHAPTER 03
          ================================================================= -->
     <section class="slide chapter-slide" data-title="챕터 3">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>12</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-        </span>
 
         <div class="slide-content">
             <span class="chapter-num reveal" data-editable>Chapter 03</span>
@@ -1619,13 +1527,6 @@
          SLIDE 11 — 기획 3단 세팅
          ================================================================= -->
     <section class="slide" data-title="3단 세팅">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>13</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Pre-production</span>
-        </span>
 
         <div class="slide-content">
             <div class="slide-header">
@@ -1679,13 +1580,6 @@
          SLIDE 12 — 기획 변동 리스크
          ================================================================= -->
     <section class="slide" data-title="기획 변동">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>14</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Risk Control</span>
-        </span>
 
         <div class="slide-content">
             <div class="slide-header">
@@ -1709,11 +1603,6 @@
          SLIDE 13 — CHAPTER 04
          ================================================================= -->
     <section class="slide chapter-slide" data-title="챕터 4">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>15</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-        </span>
 
         <div class="slide-content">
             <span class="chapter-num reveal" data-editable>Chapter 04</span>
@@ -1728,13 +1617,6 @@
          SLIDE 14 — 3축 카드
          ================================================================= -->
     <section class="slide" data-title="3축 카드">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>16</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Three Pillars</span>
-        </span>
 
         <div class="slide-content">
             <div class="slide-header">
@@ -1786,13 +1668,6 @@
          SLIDE 15 — 보안 프롬프트
          ================================================================= -->
     <section class="slide" data-title="보안 프롬프트">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>17</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Security</span>
-        </span>
 
         <div class="slide-content">
             <div class="code-layout">
@@ -1834,20 +1709,11 @@
          SLIDE 16 — CHAPTER 05
          ================================================================= -->
     <section class="slide chapter-slide" data-title="챕터 5">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>18</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-        </span>
 
         <div class="slide-content">
             <span class="chapter-num reveal" data-editable>Chapter 05</span>
             <h2 class="chapter-title reveal" data-editable>도구는 거들 뿐.</h2>
             <p class="chapter-subtitle reveal" data-editable>외부 플러그인을 먼저 써보고, 필요한 것들은 직접 만든다. <br> 학습 코스트를 줄일 수 있는 방법이었습니다.</p>
-            <div class="chapter-meta reveal">
-                <span data-editable>외부 + 자체</span>
-                <span data-editable>2분</span>
-            </div>
         </div>
 
         <div class="footer-mark"><span data-editable>Ch 05 · Stack</span></div>
@@ -1857,13 +1723,6 @@
          SLIDE 17 — PLUGIN TABLE
          ================================================================= -->
     <section class="slide" data-title="플러그인">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>19</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Stack</span>
-        </span>
 
         <div class="slide-content">
             <div class="slide-header">
@@ -1933,20 +1792,11 @@
          SLIDE 18 — CHAPTER 06
          ================================================================= -->
     <section class="slide chapter-slide" data-title="챕터 6">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>20</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-        </span>
 
         <div class="slide-content">
             <span class="chapter-num reveal" data-editable>Chapter 06</span>
             <h2 class="chapter-title reveal" data-editable>팀 리더를 위한 AX.</h2>
             <p class="chapter-subtitle reveal" data-editable>개인의 AX를 팀의 생존 전략으로. <br> 시작은 '기술'이 아니라 '문제정의'입니다.</p>
-            <div class="chapter-meta reveal">
-                <span data-editable>For Team Leaders</span>
-                <span data-editable>3분</span>
-            </div>
         </div>
 
         <div class="footer-mark"><span data-editable>Ch 06 · Team AX</span></div>
@@ -1956,13 +1806,6 @@
          SLIDE 19 — TEAM AX PLAYBOOK
          ================================================================= -->
     <section class="slide" data-title="팀 AX 가이드">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>21</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Team AX</span>
-        </span>
 
         <div class="slide-content">
             <div class="slide-header">
@@ -2015,13 +1858,6 @@
          SLIDE 22 — CLOSING TAKEAWAY
          ================================================================= -->
     <section class="slide closing-slide" data-title="마무리">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>22</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Closing</span>
-        </span>
 
         <div class="slide-content">
             <span class="tag reveal" data-editable>Takeaway · 단 하나만 가져가신다면</span>
@@ -2047,13 +1883,6 @@
          SLIDE 23 — Q&A / LINKS
          ================================================================= -->
     <section class="slide" data-title="Q&A">
-        <span class="page-marker reveal">
-            <span class="pm-num" data-editable>23</span>
-            <span class="pm-sep">/</span>
-            <span data-editable>23</span>
-            <span class="pm-sep">·</span>
-            <span class="pm-label" data-editable>Q &amp; A</span>
-        </span>
 
         <div class="slide-content">
             <div class="slide-header">

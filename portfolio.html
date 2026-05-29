@@ -165,7 +165,7 @@
 /* === OUTER SHELL — dark letterbox === */
 html, body {
     width: 100%; height: 100%;
-    background: #e0e0e0;
+    background: var(--bg);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -173,15 +173,13 @@ html, body {
     font-family: var(--font);
 }
 
-/* === 16:9 SLIDE WRAPPER === */
+/* === SLIDE WRAPPER === */
 .deck {
     position: relative;
-    /* Fit 16:9 into viewport without cropping */
-    width:  min(100vw, calc(100vh * 16 / 9));
-    height: min(100vh, calc(100vw *  9 / 16));
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
     background: var(--bg);
-    box-shadow: 0 0 60px rgba(0,0,0,0.15);
 }
 
 /* === SLIDE BASE === */
@@ -478,6 +476,63 @@ html, body {
     #btn-prev { left: 0.4rem; }
     #btn-next { right: 0.4rem; }
 }
+
+@media print {
+    @page {
+        size: 297mm 210mm;
+        margin: 0;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    #deck {
+        position: relative !important;
+        overflow: visible !important;
+        height: auto !important;
+        width: 297mm !important;
+    }
+
+    .slide {
+        display: flex !important;
+        opacity: 1 !important;
+        position: relative !important;
+        inset: auto !important;
+        width: 297mm !important;
+        height: 210mm !important;
+        page-break-after: always;
+        break-after: page;
+        overflow: hidden !important;
+        box-sizing: border-box;
+    }
+
+    .slide:last-of-type {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+
+    .rev, .rev-s {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    .progress-bar,
+    .nav-dots,
+    .mob-nav-btn,
+    #btn-restart {
+        display: none !important;
+    }
+}
 </style>
 </head>
 <body>
@@ -513,10 +568,10 @@ html, body {
                 <span style="font-size:.72em;color:var(--text2);">그래서 AI한테 맡겼다</span>
             </h1>
             <p class="rev" style="font-size:clamp(.8rem,1.55vw,1.2rem);color:var(--text2);margin-top:clamp(.4rem,1.2vh,.8rem);">
-                4개월간 Claude Code로 만든 자동화 13개
+                4개월간 Claude Code로 만든 자동화 16개
             </p>
             <div class="rev" style="display:flex;align-items:center;gap:1.4em;margin-top:clamp(.65rem,2vh,1.3rem);font-family:var(--mono);font-size:var(--t-sm);color:var(--text3);border-top:1px solid var(--border2);padding-top:clamp(.55rem,1.5vh,.9rem);">
-                <span>팀스파르타 · 로켓단게임즈 BizOps Lead</span>
+                <span>스파르타 게임즈 BizOps Lead</span>
                 <span>·</span>
                 <span>김현민</span>
             </div>
@@ -534,19 +589,19 @@ html, body {
                     <span class="tag rev" style="display:inline-block;margin-bottom:clamp(.35rem,.9vh,.7rem);">WHO AM I</span>
                     <h2 class="t-h2 rev">
                         코딩 못 합니다.<br>
-                        그런데 <span class="a">13개 자동화</span> 중 9개가<br>
+                        그런데 <span class="a">16개 자동화</span> 중 9개가<br>
                         팀에서 매일 돌아갑니다.
                     </h2>
                     <div class="div-line rev"></div>
                     <ul style="list-style:none;display:flex;flex-direction:column;gap:clamp(.25rem,.7vh,.55rem);">
-                        <li class="rev" style="display:flex;align-items:flex-start;gap:.65em;font-size:var(--t-body);color:var(--text2);"><span class="a" style="flex-shrink:0;">▸</span>로켓단게임즈 — 마케팅/사업/피플/제작지원 4개 파트 담당</li>
+                        <li class="rev" style="display:flex;align-items:flex-start;gap:.65em;font-size:var(--t-body);color:var(--text2);"><span class="a" style="flex-shrink:0;">▸</span>스파르타 게임즈 — 마케팅/사업/피플/제작지원 4개 파트 담당</li>
                         <li class="rev" style="display:flex;align-items:flex-start;gap:.65em;font-size:var(--t-body);color:var(--text2);"><span class="a" style="flex-shrink:0;">▸</span>Genspark · Manus · n8n 활용하다 4개월 전 Claude Code 입문</li>
-                        <li class="rev" style="display:flex;align-items:flex-start;gap:.65em;font-size:var(--t-body);color:var(--text2);"><span class="a" style="flex-shrink:0;">▸</span>4개월간 13개 자동화 제작 → 현재 9개가 팀 전체에서 운영 중</li>
+                        <li class="rev" style="display:flex;align-items:flex-start;gap:.65em;font-size:var(--t-body);color:var(--text2);"><span class="a" style="flex-shrink:0;">▸</span>4개월간 16개 자동화 제작 → 현재 9개가 팀 전체에서 운영 중</li>
                     </ul>
                 </div>
                 <div class="rev-s">
                     <div style="display:flex;gap:clamp(2rem,5vw,4.5rem);align-items:flex-end;">
-                        <div><div class="stat-n">13</div><div class="stat-l">총 자동화</div></div>
+                        <div><div class="stat-n">16</div><div class="stat-l">총 자동화</div></div>
                         <div><div class="stat-n" style="color:var(--cyan);">9</div><div class="stat-l">매일 운영 중</div></div>
                     </div>
                 </div>
@@ -561,7 +616,7 @@ html, body {
     <section class="slide gb" style="background:var(--bg);" id="s3">
         <div class="slide-content">
             <span class="tag rev" style="display:inline-block;margin-bottom:clamp(.3rem,.8vh,.6rem);">OVERVIEW</span>
-            <h2 class="t-h2 rev">13개 자동화 <span class="a">맵</span></h2>
+            <h2 class="t-h2 rev">16개 자동화 <span class="a">맵</span></h2>
 
             <div class="ov-grid rev-s" style="margin-top:clamp(.4rem,1.2vh,.85rem);">
                 <div class="ov-col">
@@ -570,7 +625,7 @@ html, body {
                     <div class="ov-item on">리뷰 분석 + 슬랙 알림</div>
                 </div>
                 <div class="ov-col">
-                    <div class="ov-head mk">마케팅 (7)</div>
+                    <div class="ov-head mk">마케팅 (9)</div>
                     <div class="ov-item on">데일리 퍼포먼스 리뷰</div>
                     <div class="ov-item on">위클리 퍼포먼스 리뷰</div>
                     <div class="ov-item on">롱텀 KPI 리포트</div>
@@ -578,12 +633,15 @@ html, body {
                     <div class="ov-item on">Meta 소재별 분석</div>
                     <div class="ov-item on">쇼츠 업로드 자동화</div>
                     <div class="ov-item on">게임앱 트렌드 대시보드</div>
+                    <div class="ov-item on">소재 재고 관리</div>
+                    <div class="ov-item on">주간 CVR 리포트</div>
                 </div>
                 <div class="ov-col">
-                    <div class="ov-head bz">사업 (3)</div>
+                    <div class="ov-head bz">사업 (4)</div>
                     <div class="ov-item on">데일리 뉴스 브리핑</div>
                     <div class="ov-item">배너 이미지 리사이징</div>
                     <div class="ov-item">피처링 요청서 작성</div>
+                    <div class="ov-item on">제품 캘린더 대시보드</div>
                 </div>
                 <div class="ov-col">
                     <div class="ov-head pp">피플 (1)</div>
@@ -609,7 +667,7 @@ html, body {
                 <span class="tag">월간 절감 시간</span>
             </div>
             <h2 class="t-h2 rev">매달 <span class="a">272시간</span>을<br>확보했습니다.</h2>
-            <p class="rev" style="font-size:var(--t-body);color:var(--text2);margin-top:clamp(.2rem,.5vh,.4rem);">13개 자동화 · 월 기준 합산 · 근무일 8시간 환산</p>
+            <p class="rev" style="font-size:var(--t-body);color:var(--text2);margin-top:clamp(.2rem,.5vh,.4rem);">16개 자동화 · 월 기준 합산 · 근무일 8시간 환산</p>
 
             <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.5rem,1.4vw,1.1rem);margin-top:clamp(.55rem,1.6vh,1.1rem);" class="rev-s">
                 <div style="background:rgba(250,0,48,.06);border:1px solid rgba(250,0,48,.2);border-radius:8px;padding:clamp(.65rem,1.3vw,1.1rem);text-align:center;">
@@ -769,6 +827,18 @@ html, body {
                     <div class="dc-desc">Meta Ad Library 광고 API<br>YouTube 바이럴 Shorts 집계<br>URL 하나로 팀 공유</div>
                     <div class="stacks"><span class="tag">Claude Code</span><span class="tag">Next.js</span><span class="tag tag-c">Vercel</span></div>
                 </div>
+                <div class="card-box">
+                    <div class="dc-title" style="margin-bottom:.3em;">📦 소재 재고 관리</div>
+                    <div class="dc-desc">Airbridge + Drive 자동 연동<br>Active/Pending 자동 분류<br>32개 폴더 → 매주 월요일 슬랙</div>
+                    <div class="stacks"><span class="tag">Claude Code</span><span class="tag">Airbridge MCP</span><span class="tag">Drive API</span></div>
+                    <div style="margin-top:.45em;"><span class="save">주 2h↓</span></div>
+                </div>
+                <div class="card-box">
+                    <div class="dc-title" style="margin-bottom:.3em;">📊 주간 CVR 리포트</div>
+                    <div class="dc-desc">GitHub Actions cron 자동 실행<br>국가별 벤치마크 대비 언더퍼포머 감지<br>WoW 변화율 → 슬랙 Block Kit</div>
+                    <div class="stacks"><span class="tag">Claude Code</span><span class="tag">GitHub Actions</span><span class="tag">Airbridge API</span><span class="tag">Sheets</span></div>
+                    <div style="margin-top:.45em;"><span class="save">주 2~4h↓</span></div>
+                </div>
             </div>
         </div>
         <div class="snum">07 / 12</div>
@@ -781,9 +851,9 @@ html, body {
         <div class="slide-content">
             <div style="display:flex;gap:.5em;margin-bottom:clamp(.3rem,.8vh,.6rem);" class="rev">
                 <span class="tag tag-g">사업</span>
-                <span class="tag">3개 자동화</span>
+                <span class="tag">4개 자동화</span>
             </div>
-            <h2 class="t-h2 rev">반복 사업 업무 <span class="g">3가지</span> 자동화</h2>
+            <h2 class="t-h2 rev">반복 사업 업무 <span class="g">4가지</span> 자동화</h2>
             <div class="div-line rev" style="background:linear-gradient(90deg,var(--green),transparent);"></div>
             <div style="display:flex;flex-direction:column;gap:clamp(.35rem,.9vh,.7rem);">
                 <div class="dc rev">
@@ -810,6 +880,14 @@ html, body {
                         </div>
                         <span class="save">3~4h→30min</span>
                     </div>
+                </div>
+                <div class="dc rev">
+                    <div style="flex:1;">
+                        <div class="dc-title">📅 제품 캘린더 대시보드</div>
+                        <div class="dc-desc">Google Sheets 3탭(론칭/LiveOps/피처링) 통합 → 팀 공용 월간 캘린더<br>게임별·이벤트 타입별 필터링 · HMAC 인증 · 5분 ISR 캐시</div>
+                        <div class="stacks"><span class="tag">Claude Code</span><span class="tag">Next.js 15</span><span class="tag tag-c">Vercel</span><span class="tag">Sheets API</span></div>
+                    </div>
+                    <span class="save">URL 1개로 팀 공유</span>
                 </div>
             </div>
         </div>
@@ -862,7 +940,7 @@ html, body {
             <div class="div-line rev" style="background:linear-gradient(90deg,var(--red),transparent);"></div>
             <div style="display:flex;flex-direction:column;gap:clamp(.35rem,.9vh,.7rem);">
                 <div class="fi rev">
-                    <div class="fi-icon">📁</div>
+                    <div class="si-num">01</div>
                     <div>
                         <div class="fi-title">파일명 규칙 없이 자동화를 먼저 만들었다</div>
                         <div class="fi-desc">소재 전체 오분류 → 광고 집행 데이터 엉킴 → 파싱 규칙 전면 재설계</div>
@@ -870,7 +948,7 @@ html, body {
                     </div>
                 </div>
                 <div class="fi rev">
-                    <div class="fi-icon">🚫</div>
+                    <div class="si-num">02</div>
                     <div>
                         <div class="fi-title">제약 조건들을 명확히 몰랐다</div>
                         <div class="fi-desc">크리에이티브가 업로드가 멈춰 유튜브 API 한도 증량 요청</div>
@@ -878,7 +956,7 @@ html, body {
                     </div>
                 </div>
                 <div class="fi rev">
-                    <div class="fi-icon">🔒</div>
+                    <div class="si-num">03</div>
                     <div>
                         <div class="fi-title">나만 쓰는 도구가 됐다</div>
                         <div class="fi-desc">내 판단 기준이 너무 많이 들어가 있어서 맥락 없이 타인이 쓰기 어려웠음</div>
@@ -930,13 +1008,12 @@ html, body {
             </div>
             <div class="rev" style="display:flex;gap:.65em;justify-content:center;flex-wrap:wrap;margin-top:clamp(1rem,3vh,2rem);">
                 <div class="card-box" style="padding:.45em 1em;">
-                    <span style="font-family:var(--mono);font-size:var(--t-sm);color:var(--text2);">로켓단게임즈 · BizOps Lead</span>
+                    <span style="font-family:var(--mono);font-size:var(--t-sm);color:var(--text2);">스파르타 게임즈 · BizOps Lead</span>
                 </div>
                 <div class="card-box" style="padding:.45em 1em;">
                     <span style="font-family:var(--mono);font-size:var(--t-sm);color:var(--accent-light);">클코나잇 시즌 2 · 2026</span>
                 </div>
             </div>
-            <button class="rev" id="btn-restart" style="margin-top:clamp(1.2rem,3.5vh,2.2rem);padding:.55em 1.6em;background:var(--accent);color:#fff;border:none;border-radius:6px;font-family:var(--mono);font-size:var(--t-sm);font-weight:700;letter-spacing:.06em;cursor:pointer;transition:opacity .2s;">↑ 처음으로</button>
         </div>
         <div class="snum">12 / 12</div>
     </section>
@@ -959,6 +1036,8 @@ class Deck {
     }
 
     init() {
+        // 캐시된 DOM 상태 무시하고 항상 첫 슬라이드로 강제
+        this.slides.forEach((s, i) => s.classList.toggle('active', i === 0));
         this.buildDots();
         this.keyboard();
         this.touch();
@@ -1030,6 +1109,16 @@ class Deck {
 }
 
 window.__deck = new Deck();
+
+// BFCache 복원 포함 항상 첫 슬라이드 강제 (조건 없이 전체 리셋)
+window.addEventListener('pageshow', () => {
+    const d = window.__deck;
+    if (!d) return;
+    d.slides.forEach((s, i) => s.classList.toggle('active', i === 0));
+    d.dots.forEach((dot, i) => dot.classList.toggle('active', i === 0));
+    d.current = 0;
+    d.updatePB();
+});
 
 const btnPrev = document.getElementById('btn-prev');
 const btnNext = document.getElementById('btn-next');

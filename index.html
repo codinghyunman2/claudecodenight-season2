@@ -561,6 +561,7 @@
             position: relative;
         }
         [data-title="3단 세팅"] .pillar-card:hover { border-color: var(--line); transform: none; }
+        [data-title="전환점"] .pillar-card:hover { border-color: var(--line); transform: none; }
         [data-title="게임업계 맥락"] .pillar-card:hover { border-color: var(--line); transform: none; }
         [data-title="팀 AX 가이드"] .pillar-card:hover { border-color: var(--line); transform: none; }
         [data-title="ROI 큐레이션"] .pillar-card:hover { border-color: var(--line); transform: none; }
@@ -1172,7 +1173,7 @@
                     <span class="tag reveal" data-editable>Who am I</span>
                     <h2 class="reveal" data-editable>비개발자입니다.<br>코드 직접 짤 줄 모릅니다.</h2>
                     <p class="body-text reveal" data-editable>
-                        팀스파르타 게임팀에서 <b>마케팅 · 사업 · 피플 · 제작지원</b> 4개 파트를 동시에 커버하고 있습니다. 작년 중순부터 커버해야 할 범위가 4배 늘었고, AI를 쓰는 게 선택이 아니라 생존이 됐습니다.
+                        스파르타 게임즈에서 <b>마케팅 · 사업 · 피플 · 제작지원</b> 4개 파트를 동시에 커버하고 있습니다. 작년 중순부터 커버해야 할 범위가 4배 늘었고, AI를 쓰는 게 선택이 아니라 생존이 됐습니다.
                     </p>
 
                     <div class="stat-row reveal">
@@ -1316,7 +1317,51 @@
             <p class="body-text reveal" data-editable style="margin-top: clamp(1rem, 2.4vw, 1.8rem); max-width: 64ch;">
                 실무 적용이 목표라면 도구에 얽매이지 마세요.<br>
                 앱스크립트만으로도, n8n만으로도 충분한 영역이 있습니다.<br>
-                클로드 코드는 <span class="mark">"직접 로직을 설계하고 싶을 때"</span> 비로소 필요한 단계였습니다.
+                클로드 코드는 <span class="mark">"작업 과정의 능률을 더 올리고 싶을 때"</span> 비로소 필요한 단계였습니다.<br>
+                맥락을 토대로 부분 수정이 빠르게 가능하며 퀄리티 컨트롤도 용이했습니다.
+            </p>
+        </div>
+
+        <div class="footer-mark"><span data-editable>Ch 01 · Tooling Journey</span></div>
+    </section>
+
+    <!-- =================================================================
+         SLIDE 05.5 — 전환점 (n8n → Claude Code)
+         ================================================================= -->
+    <section class="slide" data-title="전환점">
+
+        <div class="slide-content">
+            <div class="slide-header">
+                <span class="tag reveal" data-editable>Turning Point · n8n → Claude Code</span>
+                <h2 class="reveal" data-editable>팀 상황, 작업에 따라<br>유연하게 대응하기</h2>
+            </div>
+
+            <div class="pillar-grid reveal" style="grid-template-columns: 1fr 1fr;">
+                <div class="pillar-card">
+                    <span class="pillar-num" data-editable>n8n · 한계를 느낀 순간</span>
+                    <h3 data-editable>프로젝트가 게임별로<br>늘어나기 시작했다.</h3>
+                    <p class="desc" data-editable>마케팅 에이전트 — 데일리 Airbridge → 슬랙.</p>
+                    <ul>
+                        <li data-editable>프로젝트마다 워크플로우를 처음부터 — 구축 시간이 막막</li>
+                        <li data-editable>게임별 구축이 디폴트인데, 매번 <span class="mark">모든 게임 환경변수</span>를 다시 세팅</li>
+                        <li data-editable>variation이 늘수록 분기가 감당 안 됨</li>
+                    </ul>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-num" data-editable>Claude Code · 베이스 전환</span>
+                    <h3 data-editable>기존 건 그대로 두고,<br>다음 프로젝트부터 전환.</h3>
+                    <p class="desc" data-editable>잘 돌던 n8n 프로젝트를 재구축하진 않았습니다.</p>
+                    <ul>
+                        <li data-editable>팀 n8n 플랜으로 잘 도는 기존 자동화는 유지 — <span class="mark">투트랙 병행</span></li>
+                        <li data-editable>variation 적고 단순한 건 추후 n8n 활용 여지</li>
+                        <li data-editable>그러나 새 프로젝트의 <span class="mark">베이스는 클로드 코드</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="body-text reveal" data-editable style="margin-top: clamp(0.9rem, 2vw, 1.5rem);">
+                프로젝트가 끝없이 늘어나고, 복잡도가 높아진 환경에서는<br>
+                분기를 최소화하거나 <span class="mark">자율성을 높일 필요</span>가 있었습니다.
             </p>
         </div>
 
@@ -1911,7 +1956,7 @@
             </div>
 
             <p class="qa-thanks reveal" data-editable>
-                감사합니다. — 김현민 · 팀스파르타 게임팀
+                감사합니다. — 김현민 · 스파르타 게임즈
             </p>
         </div>
 
